@@ -1,0 +1,138 @@
+\section{Home assignment №1}
+
+\subsection{Task 1}
+\begin{center}
+\textbf{Determine the properties of the relation:}
+\end{center}
+\[ Q := \{(m,n) | m,n \in \mathbb{N}\ \& \ m = n^2\} \]
+
+\begin{itemize}
+\item Q is NOT reflexive: $\exists m = 2: 2 \neq 2^2 \Rightarrow (2,2) \notin Q$
+\item Q is NOT antireflexive: $\exists m = 1: 1 = 1^2 \Rightarrow (1,1) \notin Q$
+\item Q is NOT symmetric, as it is not reflexive
+\item Q is NOT asymmetric: $\exists m = 1: 1 = 1^2 \Rightarrow (1,1) \notin Q$
+\item Q is antisymmetric: $\forall m, n \neq 1, mQn\ \& \ nQm = 0$, but if $aQb\ \& \ bQa \Rightarrow a = b = 1$
+\item Q is NOT transitive: $\forall m,n,k \neq 1 if (m,n) \& (n,k) \Rightarrow m = k^4 \neq k^2$
+\item Q in NOT complete: $\exists m=1, n=2: m \neq n, but (m,n) \notin Q and (n,m)$
+\end{itemize}
+
+\subsection{Task 2}
+\begin{center}
+\textbf{
+The degree of a vertex of an undirected graph is the number of edges incident to the vertex.
+ Prove that in an arbitrary graph the number of vertices with odd degree is even.}
+\end{center}
+Look at the incidence matrix $A$ of the arbitrary undirected graph $G=(V,E)$.
+The degree of a vertex $v_i$ equals to the sum of all elements on the $i-th$ row. 
+The edge (i,j) between $v_i$ and $v_j$ is represented twice, as $A_{i,j}=A_{j,i} = 1$.
+This leads us to the fact, that sum of all elements of the matrix (which is also the sum of all vertices degrees) equals to two sums of all edges (Eiler's formula):
+
+\[ \sum_{v_i \in V} d_G(v_i) = 2 |E|  \]
+
+It means that the sum of degrees on an arbitrary graph is always even.
+So, as the sum of any number of vectices with even degrees is even, it is impossible for an arbitrary graph to have odd numbers of vectices with odd degrees.
+
+\subsection{Task 3}
+
+\begin{center}
+\textbf{Prove that the incomparability relation for a strict order is a tolerance relation.}
+\end{center}
+
+1) For any relation R, incomparability relation is defined as: 
+
+\[ I_R = R^{c} \cap R^{cd} \]
+
+where $R^c$ is complement relation to R, and $R^{cd}$ is inverse complement relation to $R$:
+
+\[ R^{c} = \{ (a,b) | (a,b) \notin R \} \]
+\[ R^{cd} = \{ (b,a) | (a,b) \notin R \} \]
+
+2) Strict order is antireflexive, asymmetric and transitive relation.
+
+3) Define main properties of $R^{c}$
+
+3.1) as $R$ is antireflexive, all diagonal elements are zeros.
+So, in $R^{c}$ all diagonal elements are non-zeros. They are also non-zeros in $R^{cd}$, as inverse relation for $(a,a)$ gives $(a,a)$. It means, that the result relation is \textbf{reflexive}.
+
+3.2) as $R$ is asymmetric and transitive, its graph can be considered as a set of directed triangles (a,b,c):
+
+\[ (a,b,c): [(a,b), (b,c), (a,c) \in R] \& [(c,b), (b,c), (c,a) \notin R] \]
+
+Tranform all triangles through onerations $R^{c}$ and $R^{cd}$:
+
+\[ (a,b,c)^{c} = (c,b,a),\ \ \ (a,b,c)^{cd} = (a,b,c) \ \Rightarrow \ (a,b,c)^{c} \cap (a,b,c) = \emptyset \]
+
+It means that there are no edges left from the original strict order in result one.
+
+The last unobserved entities in relation are pairs of objects without any connections:
+\[ \{a,b\} \in A \times A: (a,b) \notin R, (b,a) \notin R \]
+
+\[ \{a,b\}^{c}: (a,b) \in R^{c}, (b,a) \in R^{c} \]
+\[ \{a,b\}^{c} = \{a,b\}^{cd} \]
+
+This leads us to the fact, that all pairs of elements which were originally not connected now have \textbf{symmetric} connetions.
+
+As a result, incomparability relation for a strict order is reflexive and symmetric, so it is tolerance relation.
+\subsection{Task 4}
+
+Let us consider a binary relation on the set of 5 elements. Count how many different
+binary relations satisfy the following set of properties:
+
+\begin{enumerate}
+\item Asymmetric and transitive
+\item Antisymmetric and antireflexive
+\end{enumerate}
+
+1)
+
+2) Antireflexive means that all diagonal entities are zeros $\Rightarrow$ 5 diagonal elements are fixed.
+Antisymmetric property for non-diagonal elements refers as the asymmetric one:
+\[  \forall i,j | i < j \leq 5 \Rightarrow A_{ij}\ \& \ A_{ji} = 0 \Rightarrow (0,0), (1,0), (0,1)  \]
+It means that for every upper-diagonal element ($\frac{n^2-n}{2}=10$)  we have 3 options.
+The answer is:
+\[ k_2=3^{10} \]
+
+\section{Task 5}
+
+\begin{center}
+\textbf{Let us consider a binary relation on $\mathbb{Z}^2$}:
+\[ R : (x_1, y_1)R(x_2, y_2) \leftrightarrow x_1 \leq x_2, y_1 \leq y_2 \]
+\textbf{Prove that it is a partial order.
+Find the minimal and maximal elements if $R$ is defined on the following sets:}
+
+\[ A_1 = \{ (x,y) | x \leq 3, y \leq 4, x > 0, y > 0 \} \]
+\[ A_2 = \{ (x,y) | x^2 + y^2 \leq 4 \} \]
+\end{center}
+
+1) It is a partial order:
+
+\begin{enumerate}
+\item Reflexivity:
+\[ \forall (x,y) \in A, x \leq x, y \leq \Rightarrow (x,y)R(x,y) \]
+\item Transitivity:
+\[ \forall (x_1, y_1), (x_2, y_2), (x_3, y_3): if (x_1,y_1)R(x_2,y_2)\ \& \ (x_2,y_2)R(x_3,y_3),\ then \]
+\[ x_1 \leq x_2 \leq x_3 \Rightarrow x_1 \leq x_3 (1)\]
+\[ y_1 \leq y_2 \leq y_3 \Rightarrow y_1 \leq y_3 (2)\]
+\[ (1) + (2) \Rightarrow (x_1,y_1)R(x_3,y_3)\] 
+\item Antisymmetric:
+\[ If\ (x_1,y_1)R(x_2,y_2)\ \& \ (x_2,y_2)R(x_1,y_1),\ then \]
+\[ x_1 \leq x_2 \leq x_1 \Rightarrow x_1=x_2 (1) \]
+\[ y_1 \leq y_2 \leq y_1 \Rightarrow y_1=y_2 (2) \]
+\[ (1)+(2) \Rightarrow (x_1,y_1) = (x_2, y_2) \]
+\end{enumerate}
+
+2) $A_1$
+
+Maximal (minimal) elements of (A,R) are elements of A, such that there are no \textbf{strictly larger (smaller)} than these ones.
+
+\begin{enumerate}
+\item $max(A_1) = \{x = 3\} \cup \{y = 4\}: (3, 1), (3, 2), (3, 3), (3, 4), (2, 4), (1, 4)$
+\item $min(A_1) = \{x=1\} \cup \{y=1\}: (3, 1), (2, 1), (1, 1), (1, 2), (1, 3), (1, 4) $
+\end{enumerate}
+
+3) $A_2$
+
+\begin{enumerate}
+\item $max(A_1) = (0,2), (2,0)$
+\item $max(A_1) = (0,-2), (-2,0)$
+\end{enumerate}
