@@ -1,2 +1,7 @@
 
 datasets/
+*.aux
+*.log
+*.out
+*.gz
+*.pdf
