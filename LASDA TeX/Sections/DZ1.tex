@@ -54,17 +54,17 @@ where $R^c$ is complement relation to R, and $R^{cd}$ is inverse complement rela
 3.1) as $R$ is antireflexive, all diagonal elements are zeros.
 So, in $R^{c}$ all diagonal elements are non-zeros. They are also non-zeros in $R^{cd}$, as inverse relation for $(a,a)$ gives $(a,a)$. It means, that the result relation is \textbf{reflexive}.
 
-3.2) as $R$ is asymmetric and transitive, its graph can be considered as a set of directed triangles (a,b,c):
+3.2) As $R$ is asymmetric, there can be only one-directed connections between any pair $(a,b)$ or won't be any at all.
+Firstly, observe originally existing connections.
 
-\[ (a,b,c): [(a,b), (b,c), (a,c) \in R] \& [(c,b), (b,c), (c,a) \notin R] \]
+\[ (a,b): [(a,b) \in R] \& [(b,a) \notin R] \]
 
-Tranform all triangles through onerations $R^{c}$ and $R^{cd}$:
+Tranform all edge through onerations $R^{c}$ and $R^{cd}$:
 
-\[ (a,b,c)^{c} = (c,b,a),\ \ \ (a,b,c)^{cd} = (a,b,c) \ \Rightarrow \ (a,b,c)^{c} \cap (a,b,c) = \emptyset \]
-
+\[ (a,b)^{c} = (b,a),\ \ \ (a,b)^{cd} = (a,b) \ \Rightarrow \ (b,a) \cap (a,b) = \emptyset \]
 It means that there are no edges left from the original strict order in result one.
 
-The last unobserved entities in relation are pairs of objects without any connections:
+Now we can observe pairs of objects without any connections:
 \[ \{a,b\} \in A \times A: (a,b) \notin R, (b,a) \notin R \]
 
 \[ \{a,b\}^{c}: (a,b) \in R^{c}, (b,a) \in R^{c} \]
@@ -72,7 +72,7 @@ The last unobserved entities in relation are pairs of objects without any connec
 
 This leads us to the fact, that all pairs of elements which were originally not connected now have \textbf{symmetric} connetions.
 
-As a result, incomparability relation for a strict order is reflexive and symmetric, so it is tolerance relation.
+As a result, incomparability relation for a strict order has only loops and symmetric connections, so it is tolerance relation.
 \subsection{Task 4}
 
 Let us consider a binary relation on the set of 5 elements. Count how many different
@@ -83,7 +83,7 @@ binary relations satisfy the following set of properties:
 \item Antisymmetric and antireflexive
 \end{enumerate}
 
-1)
+It is easier to start with second part.
 
 2) Antireflexive means that all diagonal entities are zeros $\Rightarrow$ 5 diagonal elements are fixed.
 Antisymmetric property for non-diagonal elements refers as the asymmetric one:
@@ -91,6 +91,8 @@ Antisymmetric property for non-diagonal elements refers as the asymmetric one:
 It means that for every upper-diagonal element ($\frac{n^2-n}{2}=10$)  we have 3 options.
 The answer is:
 \[ k_2=3^{10} \]
+
+1) There is no way to calculate 
 
 \section{Task 5}
 
