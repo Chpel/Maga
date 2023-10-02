@@ -1,0 +1,107 @@
+\section{Home assignment №2, Pchelintsev Ilya}
+
+\subsection{Problem 1: Prove Isomorphism and Determine
+Topological Sorting (3 points)}
+
+Given: 2 sets $A$, $B$ and their respective relations $R_1$ and $R^{'}_2$:
+
+\begin{align*}
+ A &= \{1,2,3,4,5,6\} &  B &=\{ 'a','b','c','d','e','f' \} \\
+ R_1 &= \{ (a,b)\ |\ (a+b) mod\ 2 = 0\} & R^{'}_2 &= \{ (x,y)\ |\ |x-y|\ mod 2\ = 0 \}
+\end{align*}
+
+\subsubsection{Proof of isomorphism:}
+
+\begin{enumerate}
+\item Both sets have two cluques:
+\[ Q_1 = \{1,3,5\},\ \ Q_2 = \{2,4,5\} \]
+\[ Q{'}_1 = \{'a', 'c', 'e'\},\ \ Q^{'}_2 = \{'b','d','f'\} \]
+
+\item Consider a bijective function $f: A \leftrightarrow B$: ''letter $\leftrightarrow$ number of the letter in the alphabethical order''
+\item Result:
+\begin{align*}
+1 &\leftrightarrow 'a' & 3 &\leftrightarrow 'c' & 5 &\leftrightarrow 'e' \\
+2 &\leftrightarrow 'b' & 4 &\leftrightarrow 'd' & 6 &\leftrightarrow 'f'
+\end{align*}
+\item The isomorphism between relations is proved, as the considered function bijectively connects entities of respective cliques. 
+\end{enumerate}
+
+\subsubsection{Topological sorting}
+
+\begin{enumerate}
+\item For $R_1$: $\{1, 3, 5, 2, 4, 6\}$
+\item For $R_1$: $\{'a', 'c', 'e', 'b', 'd', 'f'\}$
+\end{enumerate}
+
+
+\subsection{Problem 2: On Posets Properties (3 points)}
+
+Given: a set $S$ with a relation $R$:
+
+\begin{align*}
+S &= \{1,2,3,4,6,8,12\} \\
+R &= \{ a \leq b\ |\ b mod\ a = 0
+\end{align*}
+
+\subsubsection{Hasse diagram}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.3\textwidth]{2_2_1.png}
+\end{figure}
+
+\subsubsection{Antichains} 
+\begin{enumerate}
+\item $\{2,3\}$
+\item $\{4,6\}$
+\item $\{8,12\}$
+\end{enumerate}
+\subsubsection{Order Ideals}
+\begin{enumerate}
+\item $\{1,2,3\}$
+\item $\{1,2,3,4,6\}$
+\item $\{1,2,3,4,6,8,12\}$
+\end{enumerate}
+\subsubsection{Order Filters}
+\begin{enumerate}
+\item $\{2,3,4,6,8,12\}$
+\item $\{4,6,8,12\}$
+\item $\{8,12\}$
+\end{enumerate}
+
+\subsection{Problem 3: On Order Dimension (2 points)}
+
+Given: a set $S$ with a relation $R$:
+
+\begin{align*}
+S &= \{1,2,3,5,6,10,15,30\} \\
+R &= \{ a \leq b\ |\ b mod\ a = 0
+\end{align*}
+
+\subsubsection{Hasse diagram}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.3\textwidth]{2_3_1.png}
+\end{figure}
+
+\subsubsection{Order dimension}
+
+\begin{enumerate}
+\item As we know, order dimension of the poset (R,S) is the minimal number of linear orders, constructed from the set S, which interception gives the considered poset.
+\item Let the 1st linear order be the following topological sorting:
+\[ S_1 = \{1,2,3,6,5,10,15,30\} \]
+There are several connections which must be excluded:
+\begin{align*}
+&(2,3),(2,5),(2,15)\\
+&(3,5),(3,10) \\
+&(6,5),(6,10),(6,15)\\
+&(10,15)
+\end{align*}
+\item Let the 2nd linear order be the another sorting:
+\[S_2 = \{1,5,3,15,2,10,6,30\}\]
+The only remained prohibited connecting is $(3,10)$.
+\item Let the last linear order be the another sorting:
+\[S_2 = \{1,2,5,10,3,6,15,30\}\]
+There are no prohibited connections remained, so the interception of these 3 linear order will give us required poset.
+\item \textbf{Answer:} the order dimension of the poset (R,S) is 3.
+\end{enumerate}
