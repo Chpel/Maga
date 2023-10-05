@@ -1,0 +1,13 @@
+,model,dataset,params,accuracy,f1_score
+0,DecisionTreeClassifier,1,"{'max_depth': 20, 'min_samples_split': 2}",0.674,0.6651908778402652
+1,RandomForestClassifier,1,"{'max_depth': 10, 'min_samples_split': 2, 'n_estimators': 150}",0.716,0.7068055926534533
+2,XGBClassifier,1,"{'learning_rate': 1.1, 'max_depth': 5, 'n_estimators': 11}",0.693,0.6833924076638707
+3,KNeighborsClassifier,1,{'n_neighbors': 3},0.6770000000000002,0.6660383348871118
+4,DecisionTreeClassifier,2,"{'max_depth': 10, 'min_samples_split': 2}",1.0,1.0
+5,RandomForestClassifier,2,"{'max_depth': 5, 'min_samples_split': 2, 'n_estimators': 150}",1.0,1.0
+6,XGBClassifier,2,"{'learning_rate': 0.5, 'max_depth': 2, 'n_estimators': 11}",1.0,1.0
+7,KNeighborsClassifier,2,{'n_neighbors': 5},0.9949999999999999,0.9947282515657812
+8,DecisionTreeClassifier,3,"{'max_depth': 15, 'min_samples_split': 2}",0.9641182876769708,0.9299887737126207
+9,RandomForestClassifier,3,"{'max_depth': 10, 'min_samples_split': 2, 'n_estimators': 100}",0.9513814191170311,0.8649133577499739
+10,XGBClassifier,3,"{'learning_rate': 0.9, 'max_depth': 5, 'n_estimators': 11}",0.9855290273938175,0.9672695868185501
+11,KNeighborsClassifier,3,{'n_neighbors': 10},0.9120382005529027,0.7393579317138732
