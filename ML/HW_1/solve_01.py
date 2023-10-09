@@ -169,7 +169,7 @@ if __name__ == "__main__":
     # обратите внимание на возможность объявлять несколько переменных в одной строке,
     # бывает удобно, особенно когда переменные связаны по смыслу и когда в правой части короткие выражения
     X_train, y_train = data[indices][:train_size], labels[indices][:train_size]
-    X_test, y_test = ...
+    X_test, y_test = data[indices][train_size:], labels[indices][train_size:]
     print("Train/test sets shapes:", X_train.shape, X_test.shape)
 
     # todo: циклом for переберите здесь значения числа ближайших соседей от 1 до 5
