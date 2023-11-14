@@ -6,3 +6,6 @@ datasets/
 *.gz
 *.pdf
 *.png
+*.csv
+*.zip
+.ipynb_checkpoints/
