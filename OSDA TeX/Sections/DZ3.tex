@@ -1,0 +1,79 @@
+\section{Home assignment №3, Pchelintsev Ilya}
+
+\subsection{Task 1. For the context given by the following table}
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+	& a & b & c & d \\  \hline
+	1&  & x & x & x\\  \hline
+ 	2& x & x & x & \\  \hline
+ 	3&  & x & x & \\  \hline
+ 	4& x &  & & x \\  \hline
+ 	5& x & x &  & x\\ 
+ \hline
+\end{tabular}
+\end{center}
+
+CONSTRUCT:
+\begin{enumerate}
+\item The full list of Equivalence classes and minimal generators
+\item Generator cover of implications and proper premise base of implications
+\end{enumerate}
+
+\begin{minipage}{0.45\textwidth}
+List of equivalence classes:
+\begin{enumerate}
+\item \{$\emptyset$, \{acd, abcd\}\}
+\item \{ 1, \{cd, bcd\}, \}
+\item \{ 2, \{ac, abc\}, \}
+\item \{ 5, abd \}
+\item \{ 15, bd \}
+\item \{ 25, ab \}
+\item \{ 45, ad \}
+\item \{ 123, \{c , bc\}\}
+\item \{ 245, a \}
+\item \{ 145, d \}
+\item \{ 1235, b\}
+\item \{ 12345, $\emptyset$\}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+Minimal generators:
+\begin{enumerate}
+\item \{$\emptyset$, acd\}
+\item \{ 1, cd \}
+\item \{ 2, ac \}
+\item \{ 5, abd \}
+\item \{ 15, bd \}
+\item \{ 25, ab \}
+\item \{ 45, ad \}
+\item \{ 123, c\}
+\item \{ 245, a \}
+\item \{ 145, d \}
+\item \{ 1235, b\}
+\item \{ 12345, $\emptyset$\}
+\end{enumerate}
+\end{minipage}
+
+Implication cover:
+\begin{enumerate}
+\item $\emptyset$: acd $\rightarrow$ b
+\item 1:cd $\rightarrow$b
+\item 2: ac $\rightarrow $b
+\item 123: с$\rightarrow$b
+\end{enumerate}
+
+Proper premise calculation:
+\begin{enumerate}
+\item $(acd)'' = abcd = acd \cup (ac)'' \cup (ad)'' \cup (cd)'' = acd \cup abc \cup ad \cup bcd \rightarrow$ not proper premise
+\item $(cd)'' = bcd = bcd \cup (c)'' \cup (d)'' = bc \cup d \rightarrow $ not proper premise
+\item $(ac)'' = abc = ac \cup (a)'' \cup (c)'' = ac \cup a \cup bc \rightarrow $ not proper premise
+\item $(c)'' = bc \neq c \rightarrow $ is promer premise
+\end{enumerate}
+
+Proper premise base:
+\begin{enumerate}
+\item $c \rightarrow b$
+\end{enumerate}
