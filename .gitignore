@@ -9,3 +9,5 @@ datasets/
 *.csv
 *.zip
 .ipynb_checkpoints/
+*.pyc
+__pycache__/
