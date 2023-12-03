@@ -77,3 +77,138 @@ Proper premise base:
 \begin{enumerate}
 \item $c \rightarrow b$
 \end{enumerate}
+
+
+\subsection{CONSTRUCT: minimum basis of functional dependencies for the many-valued context}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ &a&b&c&d&e \\ \hline
+1&u&v&t&r&q \\ \hline
+2&t&t&q&r&q \\ \hline
+3&q&t&q&t&t \\ \hline
+4&r&q&q&u&u \\ \hline
+5&q&v&t&r&t \\ \hline
+\end{tabular}
+\end{center}
+
+\subsubsection{binarized context}
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ &a&b&c&d&e \\ \hline
+\{1,2\}&&&&x&x \\ \hline
+\{1,3\}&&&&& \\ \hline
+\{1,4\}&&&&& \\ \hline
+\{1,5\}&&x&x&x& \\ \hline
+\{2,3\}&&x&x&& \\ \hline
+\{2,4\}&&&x&& \\ \hline
+\{2,5\}&&&&x& \\ \hline
+\{3,4\}&&&x&& \\ \hline
+\{3,5\}&x&&&&x \\ \hline
+\{4,5\}&&&&& \\ \hline
+\end{tabular}
+\end{center}
+
+To compute duguenne-guigues base, 
+we need to apply the previous task on this binarized context:
+
+\begin{minipage}{0.45\textwidth}
+Equivalence classes:
+\begin{enumerate}
+\item $\emptyset$ \{ab, ac, ad, be, ce, cde, bde, bce, ade, ace, acd, abe, abd, abc, abcd, abce, abde, acde, bcde, abcde\}
+\item 1 \{de\}
+\item 2 \{bd, cd, bcd\}
+\item 6 \{a, ae\}
+\item 16 \{e\}
+\item 23 \{b, bc\}
+\item 125 \{d\}
+\item 234 \{c\}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+Minimal generators:
+\begin{enumerate}
+\item $\emptyset$ \{ab, ac, ad, be, ce\}
+\item 1 \{de\}
+\item 2 \{bd, cd\}
+\item 6 \{a\}
+\item 16 \{e\}
+\item 23 \{b\}
+\item 125 \{d\}
+\item 234 \{c\}
+\end{enumerate}
+\end{minipage}
+
+Implication cover:
+\begin{enumerate}
+\item ab $\rightarrow$ cde
+\item ac $\rightarrow$ bde
+\item ad $\rightarrow$ bce
+\item be $\rightarrow$ acd
+\item ce $\rightarrow$ abd
+\item bd $\rightarrow$ c
+\item cd $\rightarrow$ b
+\item  a $\rightarrow$ e
+\item  b $\rightarrow$ c
+\end{enumerate}
+
+Proper premise calculation:
+\begin{enumerate}
+\item ab: $(ab)'' = abcde \neq ab \cup (a)'' \cup (b)'' = ab \cup ae \cup ac = abce \rightarrow$ proper premise
+
+\item ac: $(ac)'' = abcde \neq ac \cup (a)'' \cup (c)'' = ac \cup ae \cup c = ace \rightarrow$ proper premise
+
+\item ad: $(ad)'' = abcde \neq ad \cup (a)'' \cup (d)'' = ad \cup ae \cup d = ade \rightarrow$ proper premise
+
+\item be: $(be)'' = abcde \neq be \cup (b)'' \cup (e)'' = be \cup bc \cup e = bce \rightarrow$ proper premise
+
+\item ce: $(ce)'' = abcde \neq ce \cup (c)'' \cup (e)'' = ce \cup c \cup e = ce \rightarrow$ proper premise
+
+\item bd: $(bd)'' = bcd = bd \cup (b)'' \cup (d)'' = bd \cup bc \cup d = bcd \rightarrow$ NOT proper premise
+
+\item cd: $(cd)'' = bcd \neq cd \cup (c)'' \cup (d)'' = cd \cup c \cup d = cd \rightarrow$ proper premise
+
+\item a: $(a)'' = ae \neq a \rightarrow$ proper premise
+
+\item b: $(b)'' = bc \neq b \rightarrow$ proper premise
+
+\end{enumerate}
+
+Proper premise base:
+\begin{enumerate}
+
+\item ab $\rightarrow$ cde
+\item ac $\rightarrow$ bde
+\item ad $\rightarrow$ bce
+\item be $\rightarrow$ acd
+\item ce $\rightarrow$ abd
+\item cd $\rightarrow$ b
+\item  a $\rightarrow$ e
+\item  b $\rightarrow$ c
+\end{enumerate}
+
+D.-G. calculation - for all premises the first condition is satisfied, so I will check only the second condition:
+\begin{enumerate}
+\item $ab: (a)'' = ae \notin ab, (b)'' = bc \notin ab \rightarrow$ not pseudo-intent.
+\item $ad: (a)'' = ae \notin ad, (d)'' = d \in ad \rightarrow$ is pseudo-intent.
+\item $ce: (c)'' = c \in ce \rightarrow$ is pseudo-intent
+\item $cd: (c)'' = c \in ce \rightarrow$ is pseudo-intent
+\item $a: (a)'' = ae \rightarrow$ not pseudo-intent.
+\item $b: (b)'' = bc \rightarrow$ not pseudo-intent.
+\end{enumerate}
+
+D.-G. base:
+\begin{enumerate}
+\item ab $\rightarrow$ cde
+\item a $\rightarrow$ e
+\item b $\rightarrow$ c
+\end{enumerate}
+
+\subsection{Task 3 (Neural FCA)}
+
+\href{https://github.com/Chpel/Maga/tree/main/OSDA\%20.ipynb/Big\%20homework}{Ссылка на репозиторий большого домашнего задания}
