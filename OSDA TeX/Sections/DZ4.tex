@@ -1,0 +1,121 @@
+\section{Home assignment №4, Pchelintsev Ilya}
+
+\subsection{Task 1: LazyFCA}
+
+\subsubsection{Order of the dataset}
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.45\textwidth}
+\includegraphics[width=0.8\textwidth]{4_1_Dataset1}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\includegraphics[width=0.8\textwidth]{4_1_Dataset2}
+\end{minipage}
+\caption{train and test subdatasets for tasks 1.1 and 1.2}
+\end{figure}
+
+\begin{lstlisting}[language=Python, caption=LazyFCA algorithm]
+def LazyFCA(t0, df_train, y_train, cat_feats, num_feats, proof=False, alpha=0.75):
+    """
+    t0: one object of test dataset
+    df_train: train dataset
+    y_train: target values of the train dataset
+    cat_feats: names of categorical features
+    num_feats: names of numerical features
+    proof: boolean value of writing the number of object which caused succesfull classification
+    alpha: a fraction of object which is enough for classifying
+    """
+    for _, t_x in df_train.iterrows():
+        sim_cfeats = cat_feats[t_x.loc[cat_feats] == t0.loc[cat_feats]]
+        num_df0 = pd.DataFrame([t_x, t0])[num_feats]
+        min_vals = num_df0.min()
+        max_vals = num_df0.max()
+        if len(sim_cfeats) > 1:
+            cat_sim_mask = (df_train[sim_cfeats] == t0[sim_cfeats]).all(axis=1)
+        elif len(sim_cfeats) == 1:
+            cat_sim_mask = df_train[sim_cfeats[0]] == t0[sim_cfeats[0]]
+        else:
+            cat_sim_mask = pd.Series([True] * df_train.shape[0], index=df_train.index)
+        extsim = (cat_sim_mask & \
+                       (df_train[num_feats] >= min_vals).all(axis=1) & \
+                        (df_train[num_feats] <= max_vals).all(axis=1))
+        y_extsim = y_train.loc[extsim].value_counts()
+        y_extsim /= y_extsim.sum()
+        res = y_extsim[y_extsim > 0.75]
+        if len(res) > 0:
+            if proof:
+                print('proof', _)
+            return res.index[0]
+    return None
+
+res = df_test.apply(lambda x: LazyFCA(x, df_train, y_train, cat_f, num_f, True), axis=1)
+print(f'accuracy: {(res == y_test).sum() / res.shape[0]}')
+\end{lstlisting}
+
+The result of the LazyFCA algorithm for the test subset was 'FFF' (all were 'proved' by the first object), with the accuracy equal to zero. 
+On the other hand, for the randomized dataset (see fig.\ref{fig:data1_2}) the result was the opposite - 'TTT' with the ideal accuracy of 1.0.
+It is obvious that the algorithm is highly dependent to the order of the train dataset, which require cross-validation of it.
+
+
+\subsubsection{Cross-validation}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{4_1_3}
+\caption{The code for the task 1.3 and result for each subset}
+\end{figure}
+
+\subsubsection{Different intersections}
+
+Consider two new ways of intersections - the first way is the 'minimal' half-interval:
+
+\[ [a_1, \infty) \cap [a_2, \infty) = [min(a_1,a_2), \infty) \]
+
+Considering the train and test subsets same as in task 1.2, the result is the following (fig. \ref{fig:min_int})
+
+\begin{figure}[h]
+\centering
+\label{fig:min_int}
+\includegraphics[width=0.75\textwidth]{4_1_4}
+\caption{The code for the task 1.4 (commented part is the changed calculation of exstim-mask in the "LazyFCA" function) and the result}
+\end{figure}
+
+The second way is the 'maximal' half-interval:
+
+\[ [a_1, \infty) \cap [a_2, \infty) = [max(a_1,a_2), \infty) \]
+
+Considering the train and test subsets same as in task 1.2, the result is the following (fig. \ref{fig:min_int})
+
+\begin{figure}[h]
+\centering
+\label{fig:min_int}
+\includegraphics[width=0.75\textwidth]{4_1_5}
+\caption{The code for the task 1.5 (commented part is the changed calculation of exstim-mask in the "LazyFCA" function) and the result}
+\end{figure}
+
+\subsection{Task 2: Graphs and hypothesis}
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{0.49\textwidth}
+\includegraphics[width=0.99\textwidth]{Pos_lattice}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+\includegraphics[width=0.99\textwidth]{Neg_lattice}
+\end{minipage}
+\caption{Positive and negative lattices of the task 2}
+\end{figure}
+
+The minimal positive hypothesis $H^{+}=\{1,2,3,4\}$, as there are no counterparts from the negative dataset.
+The minimal negative hypothesis is $H^{-}=\{5,6,7\}$, as there are no counterparts from the negative dataset.
+As a result, according to the gathered hypothesises:
+
+\begin{itemize}
+\item $G_8 \rightarrow +$, as $H^{+} \in G_8 \& H^{-} \notin G_8$
+\item $G_9 \rightarrow -$, as $H^{-} \in G_9 \& H^{+} \notin G_9$
+\item $G_{10} \rightarrow +$, as $H^{+} \in G_{10} \& H^{-} \notin G_{10}$
+\item $G_{11} \rightarrow +$, as $H^{+} \in G_{11} \& H^{-} \notin G_{11}$
+\end{itemize}

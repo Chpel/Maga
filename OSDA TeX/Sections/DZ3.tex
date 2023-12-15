@@ -195,20 +195,23 @@ Proper premise base:
 D.-G. calculation - for all premises the first condition is satisfied, so I will check only the second condition:
 \begin{enumerate}
 \item $ab: (a)'' = ae \notin ab, (b)'' = bc \notin ab \rightarrow$ not pseudo-intent.
-\item $ad: (a)'' = ae \notin ad, (d)'' = d \in ad \rightarrow$ is pseudo-intent.
-\item $ce: (c)'' = c \in ce \rightarrow$ is pseudo-intent
-\item $cd: (c)'' = c \in ce \rightarrow$ is pseudo-intent
-\item $a: (a)'' = ae \rightarrow$ not pseudo-intent.
-\item $b: (b)'' = bc \rightarrow$ not pseudo-intent.
+\item $ac: (a)'' = ae \notin ac, (c)'' = c \notin ab \rightarrow$ not pseudo-intent.
+\item $ad: (a)'' = ae \notin ad, (d)'' = d \in ad \rightarrow$ not pseudo-intent.
+\item $be: (b)'' = bc \notin be, (e)'' = e \in be \rightarrow$ not pseudo-intent.
+\item $ce: (c)'' = c \in ce, (e)'' = e \in ce \rightarrow$ is pseudo-intent (no inner P.I.s).
+\item $cd: (c)'' = c \in cd, (d)'' = d \in cd \rightarrow$ is pseudo-intent (no inner P.I.s).
+\item $a: (a)'' = ae \rightarrow$ is pseudo-intent (for one-element subsets the first condition is enough).
+\item $b: (b)'' = bc \rightarrow$ is pseudo-intent.
 \end{enumerate}
 
 D.-G. base:
 \begin{enumerate}
 \item ab $\rightarrow$ cde
-\item a $\rightarrow$ e
-\item b $\rightarrow$ c
+\item ac $\rightarrow$ bde
+\item ad $\rightarrow$ bce
+\item be $\rightarrow$ acd
 \end{enumerate}
 
 \subsection{Task 3 (Neural FCA)}
 
-\href{https://github.com/Chpel/Maga/tree/main/OSDA\%20.ipynb/Big\%20homework}{Ссылка на репозиторий большого домашнего задания}
+\href{https://github.com/Chpel/Maga/tree/main/OSDA\%20.ipynb/Big\%20homework}{Github Repository link}
