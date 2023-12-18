@@ -1,0 +1,47 @@
+\section{Baselines}
+
+The classification on the data selected in the previous homework was performed using the following 4 methods:
+
+\begin{enumerate}
+\item Decision tree
+\item Random forest
+\item xGboost
+\item k-NN classifier
+\end{enumerate}
+
+The results presented on the figure \ref{fig:baseline}. 
+It is seen that every model performs on nearly same perfomance on the same data.
+However, the performance is completely different on different datasets, which can show the quality on binarization.
+The notebooks of binarization and classification are presented \href{https:/github.com/Chpel/Maga/tree/main/OSDA\%20.ipynb/Big\%20homework}{here}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{2_4_1.png}
+\caption{Results of the classification research: number of datasets are the following: 1 - Bank Classification, 2 - Bikes, 3 - Cars.}
+\label{fig:baseline}
+\end{figure}
+
+\section{Neural FCA}
+
+The Neural FCA was performed on each dataset. 
+As each dataset have different number of rows and different number of features, we use different train ratio on each dataset.
+It does not reduce the train quality, if the train size is proportionate to amount of possible concepts. 
+For example: the 'bike' binarized dataset has 10 columns, but it's not independent features, as only one value available per each feature.
+As a result, the number of concept is $2 \times 2 \times 5 \times 2 = 40$, which much less than 800 objects took for training.
+On other hand, for densely binarized datasets (where each columns connect to a unique feature from original datasets), such as 'bank', the number of concepts is $2^11$, which makes training more difficult.
+
+The number of concepts enough to cover all features is also highly different in each dataset - for 'bikes' dataset it was only 6, but for 'bank' datset even 30 concepts couldn't cover all features.
+
+It is also important to balance the target value ratio in the train and the test data. 
+For example, 'cars' and 'bank' datasets were highly unbalanced, so it was required to take equal amount of positive and negative objects deliberately.
+But the same time, it was crucial to have a sufficient number of both types of objects in the test area, to make sure that estimation of the quality will be fair.
+
+The results of FCA training are presented on the fig. \ref{fig:fca}.
+It is clearly seen that FCA method performed slightly better both in accuracy and in f1-score than the common ML baselines.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{3_report.png}
+\caption{Results of the classification research: number of datasets are the following: 1 - Bank Classification, 2 - Bikes, 3 - Cars.}
+\label{fig:fca}
+\end{figure}

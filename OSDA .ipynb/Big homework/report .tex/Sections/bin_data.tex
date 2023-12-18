@@ -1,0 +1,117 @@
+\section{Data selection and binarization}
+
+As my big home work assignment, I choose Neural FCA.
+I have found 3 datasets with mostly categorical data, appropriate for FCA methods.
+
+\begin{enumerate}
+\item The \href{https://www.kaggle.com/datasets/rashmiranu/banking-dataset-classification}{Banking Dataset Classification} of 33000 rows.
+\item A dataset of \href{https://www.kaggle.com/datasets/heeraldedhia/bike-buyers}{Bike Buyers} of 1000 rows.
+\item A dataset of the \href{https://www.kaggle.com/datasets/subhajeetdas/car-acceptability-classification-dataset}{car acceptibility} (1700 rows).
+\end{enumerate}
+
+\subsubsection{Banking Dataset Classification}
+
+The first dataset contains the economical and commercial information about the bank clients and their acceptability during current marketing campaign:
+
+\begin{enumerate}
+\item \textbf{age} - age of a person
+\item \textbf{job} - type of job
+\item \textbf{marital} - marital status
+\item \textbf{education} - type of graduation
+\item \textbf{default} - has credit in default?
+\item \textbf{housing} - has housing loan?
+\item \textbf{loan} - has personal loan?
+\item \textbf{contact} - contact communication type ('cellular','telephone')
+\item \textbf{month} - last contact month of year 
+\item \textbf{day\_of\_week} - last contact day of the week
+\item \textbf{duration} - last contact duration, in seconds
+\item \textbf{campaign} - number of contacts performed during this campaign and for this client (includes last contact)
+\item \textbf{pdays} - number of days that passed by after last contact from a previous campaign (999 if was not previously contacted)
+\item \textbf{previous} -  number of contacts performed before this campaign and for this client
+\item \textbf{poutcome} - outcome of the previous marketing campaign ('failure','nonexistent','success')
+\item \textbf{y} - TARGET outcome of the current marketing campaign
+\end{enumerate}
+
+Features 'job', 'marital' ,'education' ,'default', 'housing' and 'loan' can have values of uncertainity. 
+I decided to clear the dataset from any uncertain values and got 24305 rows of 33000
+The chosen binarized features are the following:
+
+\begin{enumerate}
+\item \textbf{high\_educ} - professional skills (job = university/professional\_course)
+\item \textbf{has\_job} - has a job (not a student/unemployed/retired
+\item \textbf{married} - not single of divorced/widowed
+\item \textbf{default}
+\item \textbf{housing}
+\item \textbf{loan}
+\item \textbf{cell\_cont} - contacts by cellular phone 
+\item \textbf{before\_con} - there were contacts performed before this campaign
+\item \textbf{current\_con} - there were contacts performed during this campaign
+\item \textbf{long\_dur} - the last contact was longer than the mean contact with negative result
+\item \textbf{poutcome} - success of the previous campaign
+\item \textbf{y} - TARGET
+\end{enumerate}
+
+Features 'default', 'housing', 'loan', and 'y' remained the same as in the dataset. 
+
+
+\subsubsection{Bike Buyers}
+
+The dataset describes potential buyers of a bike with their economic status and commuting information.
+
+\begin{enumerate}
+\item  \textbf{ID}
+\item  \textbf{Marital Status}
+\item  \textbf{Gender}
+\item  \textbf{Income}
+\item  \textbf{Children} - number of children the customer has
+\item  \textbf{Education} - type of the customer graduation
+\item  \textbf{Occupation} - professional level of the customer's job
+\item  \textbf{Home Owner} does the customer have a real estate?
+\item  \textbf{Cars} - number of cars the customer has
+\item  \textbf{Commute Distance} - distance to work (several interval of miles) 
+\item  \textbf{Region} - Europe/North America/ etc.
+\item  \textbf{Age}
+\item  \textbf{Purchased Bike} - target value of buying a bike
+\end{enumerate}
+
+According to the task priorites, the chosen features for binarization and the further FCA are: 'Income', 'Cars', 'Commute Distance', 'Gender'.
+The binarized features are:
+
+\begin{enumerate}
+\item {Income 10000-60000, Income 60000-170000} - binary distribution of the income
+\item {Cars 0, Cars 1-4} - binary distribution of the number of cars
+\item {Commute Distance 0-1/1-2/2-5/5-10/10+ Miles} - bined distribution of the commute distance
+\item {Gender Male}
+\item {Purchased} = \textbf{Purchased Bike}
+\end{enumerate}
+
+
+\subsubsection{Car Acceptability}
+
+The last dataset contains information of car parameters and its overall market acceptability.
+Most of features are measures of car main qualities, but designed as categorical and has values 'low', 'medium', 'high and 'very high' (called 'vhigh'). 
+
+\begin{enumerate}
+\item \textbf{Buying price} - from low to very high
+\item \textbf{Maintenance price} - from low to very high
+\item \textbf{No\_of\_Doors} - 2,3, 4 OR 5+
+\item \textbf{Person\_Capacity} - 2, 4 or more
+\item \textbf{Size\_of\_Luggage} - small, medium or big
+\item \textbf{Safety} - low, mdium or high
+\item \textbf{Car\_Acceptability} - target value - 'unacc', 'acc', 'good', 'very good'.
+\end{enumerate}
+
+To minimize amount of unique values in columns the dataset was reduced to rows without 'vhigh' values, while acceptablity was divided into two values: $0 = unacc$ and $1 = acc-vgood$.
+The datset was also stripped from features 'No\_of'\_Doors', 'Person Capacity' and 'Size of Luggage'. The remained features were binarized for each unique value.
+
+Final set of features is the following:
+
+\begin{enumerate}
+\item \textbf{Buying Price high/low/med }
+\item \textbf{Maintenance Price high/low/med}
+\item \textbf{Person Capacity 2/4/more}
+\item \textbf{Safety high/low/med}
+\item \textbf{Car Acceptability}
+\end{enumerate}
+
+
