@@ -14,3 +14,4 @@ __pycache__/
 *.docx
 *.doc
 *.jpg
+.DS_Store
