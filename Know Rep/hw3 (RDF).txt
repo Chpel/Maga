@@ -1,0 +1,72 @@
+@prefix ex: <http://example.org/school/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Classes
+ex:Employee a rdfs:Class .
+ex:Teacher a rdfs:Class ; rdfs:subClassOf ex:Employee .
+ex:Schoolmaster a rdfs:Class ; rdfs:subClassOf ex:Employee .
+ex:Grade a rdfs:Class .
+ex:Subject a rdfs:Class .
+
+# Property Definitions
+ex:hasEmployee a rdf:Property ;
+    rdfs:domain ex:School ;
+    rdfs:range ex:Employee .
+
+ex:isAssignedTo a rdf:Property ;
+    rdfs:domain ex:Teacher ;
+    rdfs:range ex:Grade .
+
+ex:specializesIn a rdf:Property ;
+    rdfs:domain ex:Teacher ;
+    rdfs:range ex:Subject .
+
+ex:duties a rdf:Property ;
+    rdfs:domain ex:Schoolmaster ;
+    rdfs:range ex:Administrative, ex:Teaching .
+
+ex:favouriteSubject a rdf:Property ;
+    rdfs:domain ex:Pupil ;
+    rdfs:range ex:Subject .
+
+# Subproperty Definitions
+ex:isAssignedToPhysicalEducation a rdf:Property ;
+    rdfs:subPropertyOf ex:isAssignedTo ;
+    rdfs:domain ex:Teacher ;
+    rdfs:range ex:PhysicalEducation .
+
+# School
+ex:FreiburgElementarySchool a ex:School ;
+    ex:hasEmployee ex:MrMaier, ex:MrsSchmidt, ex:MrsKoster .
+
+# Employees
+ex:MrMaier a ex:Teacher ;
+    ex:specializesIn ex:Sports ;
+    ex:isAssignedTo ex:firstGraders, ex:PhysicalEducation .
+
+ex:MrsSchmidt a ex:Teacher ;
+    ex:isAssignedTo ex:secondGraders, ex:thirdGraders, ex:forthGraders .
+
+ex:MrsKoster a ex:Schoolmaster ;
+    ex:isAssignedTo ex:secondGraders, ex:thirdGraders, ex:forthGraders ;
+    ex:duties ex:Administrative, ex:Teaching .
+
+# Grades
+ex:firstGraders a ex:Grade ;
+    rdf:first "First Grade" .
+
+ex:secondGraders a ex:Grade ;
+    rdf:first "Second Grade" .
+
+ex:thirdGraders a ex:Grade ;
+    rdf:first "Third Grade" .
+
+ex:forthGraders a ex:Grade ;
+    rdf:first "Fourth Grade" .
+
+
+# Students
+ex:Marie a ex:Pupil ;
+    rdfs:type ex:forthGraders ;
+    ex:favouriteSubject ex:PhysicalEducation, ex:Paining, ex:Mathematics .
