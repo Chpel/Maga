@@ -1,0 +1,146 @@
+Prefix(:=<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2/>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2>
+
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Art>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Cognitive_Skills>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Composing>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Craft>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Creativity>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Endurance>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Gaming>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hearing>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hobby>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Human_Properties>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Motorics>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Music>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Phisical_Apperance>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Playing_Instruments>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Pottery>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Reaction>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Soccer>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Social_Skills>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Speed>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Sports>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Tabletop_Gaming>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Video_Gaming>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Woodworking>))
+Declaration(Class(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Yoga>))
+Declaration(ObjectProperty(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes>))
+############################
+#   Object Properties
+############################
+
+# Object Property: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes>)
+
+ObjectPropertyDomain(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hobby>)
+ObjectPropertyRange(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Human_Properties>)
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Art> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Art>)
+
+EquivalentClasses(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Art> ObjectIntersectionOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hobby> ObjectSomeValuesFrom(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Creativity>)))
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Art> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hobby>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Cognitive_Skills> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Cognitive_Skills>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Cognitive_Skills> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Human_Properties>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Composing> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Composing>)
+
+EquivalentClasses(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Composing> ObjectIntersectionOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Music> ObjectSomeValuesFrom(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Creativity>)))
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Composing> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Music>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Craft> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Craft>)
+
+EquivalentClasses(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Craft> ObjectIntersectionOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hobby> ObjectSomeValuesFrom(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Creativity>) ObjectSomeValuesFrom(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Motorics>)))
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Craft> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hobby>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Creativity> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Creativity>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Creativity> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Cognitive_Skills>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Endurance> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Endurance>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Endurance> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Phisical_Apperance>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Gaming> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Gaming>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Gaming> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hobby>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hearing> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hearing>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hearing> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Cognitive_Skills>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Motorics> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Motorics>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Motorics> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Cognitive_Skills>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Music> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Music>)
+
+EquivalentClasses(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Music> ObjectIntersectionOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hobby> ObjectSomeValuesFrom(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hearing>)))
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Music> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hobby>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Phisical_Apperance> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Phisical_Apperance>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Phisical_Apperance> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Human_Properties>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Playing_Instruments> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Playing_Instruments>)
+
+EquivalentClasses(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Playing_Instruments> ObjectIntersectionOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Music> ObjectSomeValuesFrom(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Motorics>)))
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Playing_Instruments> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Music>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Pottery> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Pottery>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Pottery> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Craft>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Reaction> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Reaction>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Reaction> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Cognitive_Skills>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Soccer> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Soccer>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Soccer> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Sports>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Social_Skills> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Social_Skills>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Social_Skills> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Human_Properties>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Speed> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Speed>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Speed> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Phisical_Apperance>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Sports> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Sports>)
+
+EquivalentClasses(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Sports> ObjectIntersectionOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hobby> ObjectSomeValuesFrom(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Phisical_Apperance>)))
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Sports> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Hobby>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Tabletop_Gaming> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Tabletop_Gaming>)
+
+EquivalentClasses(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Tabletop_Gaming> ObjectIntersectionOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Gaming> ObjectSomeValuesFrom(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#developes> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Social_Skills>)))
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Tabletop_Gaming> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Gaming>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Video_Gaming> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Video_Gaming>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Video_Gaming> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Gaming>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Woodworking> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Woodworking>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Woodworking> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Craft>)
+
+# Class: <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Yoga> (<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Yoga>)
+
+SubClassOf(<http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Yoga> <http://www.semanticweb.org/admin/ontologies/2024/10/untitled-ontology-2#Sports>)
+
+
+)
